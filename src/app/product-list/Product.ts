@@ -6,5 +6,8 @@ export interface Product{
     stock: number;
     image: string; // es una url
     clearance: boolean; // oferta
-
+quantity:number;
 }
+
+
+

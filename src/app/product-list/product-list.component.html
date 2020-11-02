@@ -7,21 +7,23 @@
             <th>Type</th>
             <th>Price</th>
             <th>Stock</th>
+            <th>Buy</th>
         </tr>
     </thead>
 
     <tbody>
         <tr *ngFor="let product of products" [ngClass]="{'clearance': product.clearance}">
-            <th>
-                <img height="200" width="300" [src]="product.image" [alt]="">
-            </th>
-            <th>{{product.name}}</th>
-            <th>{{product.type}}</th>
-            <th>{{product.price}}</th>
-            <th *ngIf="product.stock==0; else elseBlock" class="badge badge-warning">Out of stock</th>
+            <td>
+                <img height="100" width="200" [src]="product.image" [alt]="">
+            </td>
+            <td>{{product.name}}</td>
+            <td>{{product.type}}</td>
+            <td>{{product.price | currency}}</td>
+            <td *ngIf="product.stock==0; else elseBlock" class="badge badge-warning">Out of stock</td>
             <ng-template #elseBlock>
-                <th>{{product.stock}}</th>
+                <td>{{product.stock}}</td>
             </ng-template>
+            <td> <button type="button" class="btn btn-primary btn-sm" (click)="downQuantity(product)">-</button> <span>{{product.quantity}}</span><button type="button" class="btn btn-primary btn-sm" (click)="upQuantity(product)">+</button></td>
         </tr>
     </tbody>
 </table>

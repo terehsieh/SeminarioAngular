@@ -17,6 +17,7 @@ products: Product[]=
   stock: 0,
   image: 'assets/img/apple.jpg',
   clearance: true, // oferta
+  quantity:0, // por defecto 
 },
 {
   name: 'Kiwi',
@@ -25,10 +26,20 @@ products: Product[]=
   stock: 20,
   image: 'assets/img/apple.jpg',
   clearance: false,
+  quantity:0,
 }]
   constructor() { }
 
   ngOnInit(): void {
   }
 
+upQuantity(product: Product): void{
+  if(product.stock> product.quantity)
+    product.quantity++;
+}
+
+downQuantity(product: Product): void{
+  if(product.quantity>0)
+    product.quantity--;
+  }
 }
