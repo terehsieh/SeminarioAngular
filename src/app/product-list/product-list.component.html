@@ -23,7 +23,10 @@
             <ng-template #elseBlock>
                 <td>{{product.stock}}</td>
             </ng-template>
-            <td> <button type="button" class="btn btn-primary btn-sm" (click)="downQuantity(product)">-</button> <span>{{product.quantity}}</span><button type="button" class="btn btn-primary btn-sm" (click)="upQuantity(product)">+</button></td>
+            <td> <button type="button" class="btn btn-primary btn-sm" (click)="downQuantity(product)">-</button>
+                <!-- <span>{{product.quantity}}</span>  -->
+                <input type="text" [(ngModel)]="product.quantity" (keyup)="changeQuantity($event, product)">
+                <button type="button" class="btn btn-primary btn-sm" (click)="upQuantity(product)">+</button></td>
         </tr>
     </tbody>
 </table>
