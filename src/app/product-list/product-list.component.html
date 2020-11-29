@@ -14,19 +14,17 @@
     <tbody>
         <tr *ngFor="let product of products" [ngClass]="{'clearance': product.clearance}">
             <td>
-                <img height="100" width="200" [src]="product.image" [alt]="">
+                <img height="100" width="200" [src]="product.image" [alt]="product.name">
             </td>
             <td>{{product.name}}</td>
             <td>{{product.type}}</td>
             <td>{{product.price | currency}}</td>
-            <td *ngIf="product.stock==0; else elseBlock" class="badge badge-warning">Out of stock</td>
-            <ng-template #elseBlock>
-                <td>{{product.stock}}</td>
-            </ng-template>
-            <td> <button type="button" class="btn btn-primary btn-sm" (click)="downQuantity(product)">-</button>
-                <!-- <span>{{product.quantity}}</span>  -->
-                <input type="text" [(ngModel)]="product.quantity" (keyup)="changeQuantity($event, product)">
-                <button type="button" class="btn btn-primary btn-sm" (click)="upQuantity(product)">+</button></td>
+            <td><span class="badge badge-warning" *ngIf="product.stock==0">OUT OF STOCK</span></td>
+            <td>
+                <!-- los input son corchetes [ ], input y outputs son [( )]
+ -->
+                <app-input-integer [(quantity)]="product.quantity" [max]="product.stock" *ngIf="product.stock" (maxReached)="maxReached($event)"></app-input-integer>
+            </td>
         </tr>
     </tbody>
 </table>

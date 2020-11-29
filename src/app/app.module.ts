@@ -7,12 +7,14 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { FormsModule } from '@angular/forms';
 import { HimalayaAboutComponent } from './himalaya-about/himalaya-about.component';
 import { CartComponent } from './cart/cart.component';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     HimalayaAboutComponent,
-    CartComponent
+    CartComponent,
+    InputIntegerComponent
   ],
   imports: [
     BrowserModule,

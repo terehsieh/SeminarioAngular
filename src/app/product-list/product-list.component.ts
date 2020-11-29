@@ -33,26 +33,5 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  upQuantity(product: Product): void {
-    if (product.quantity < product.stock)
-      product.quantity++;
-  }
-
-  downQuantity(product: Product): void {
-    if (product.quantity > 0)
-      product.quantity--;
-  }
-
-  changeQuantity(e, product: Product): void {
-    // controlar q se ingresa numeros de 0 al 9
-    // if(event.key>0 && event.key<1000 ){
-    // product.quantity=event.key;
-    // }else{
-
-    //   product.quantity=0;
-    // }
-    
-    //https://stackoverflow.com/questions/41465542/angular2-input-field-to-accept-only-numbers/46754601
-console.log(e);
-  }
+  
 }
