@@ -1,0 +1,18 @@
+.navbar {
+    background: rgb(8, 163, 209);
+    background: linear-gradient(86deg, rgba(8, 163, 209, 1) 0%, rgba(32, 15, 98, 1) 100%);
+}
+
+footer {
+    /* display: grid; */
+    /* display: table-cell;
+    vertical-align: middle; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: black;
+    height: 60px;
+    /* align-self: center; */
+    /* width: auto; */
+}

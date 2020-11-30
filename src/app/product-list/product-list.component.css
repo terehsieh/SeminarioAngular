@@ -1,8 +1,42 @@
-.clearance {
-    border: 2px solid green;
-    background-color: lightgreen;
+/* TABLE */
+
+table {
+    color: white;
+    margin-right: 100px;
+}
+
+tr {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+tr:hover {
+    background-color: rgba(9, 199, 219, 0.7);
 }
 
 td {
     vertical-align: middle;
 }
+
+
+/* CLEARANCE */
+
+.clearance {
+    /* border: 2px solid rgba(255, 255, 255, 0.5); */
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* BUTTON */
+
+button {
+    width: max-content;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    background: #2196f3;
+    border: none;
+}
+
+
+/* IMAGES */

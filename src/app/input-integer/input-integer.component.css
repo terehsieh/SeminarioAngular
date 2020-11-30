@@ -1,3 +1,13 @@
 input {
     max-width: 40px;
 }
+
+button {
+    width: max-content;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 20px;
+    background: #2196f3;
+    border: none;
+}
