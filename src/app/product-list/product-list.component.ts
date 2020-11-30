@@ -11,25 +11,25 @@ import { Product } from './Product';
 export class ProductListComponent implements OnInit {
   // declarar Json para usar en la lista 
 
-  products: Product[] =
-    [{
-      name: 'Apple',
-      type: 'fruit',
-      price: 10,
-      stock: 0,
-      image: 'assets/img/apple.jpg',
-      clearance: true, // oferta
-      quantity: 0, // por defecto 
-    },
-    {
-      name: 'Kiwi',
-      type: 'fruit',
-      price: 10,
-      stock: 20,
-      image: 'assets/img/apple.jpg',
-      clearance: false,
-      quantity: 0,
-    }]
+  products: Product[] =[];
+    // [{
+    //   name: 'Apple',
+    //   type: 'fruit',
+    //   price: 10,
+    //   stock: 0,
+    //   image: 'assets/img/apple.jpg',
+    //   clearance: true, // oferta
+    //   quantity: 0, // por defecto 
+    // },
+    // {
+    //   name: 'Kiwi',
+    //   type: 'fruit',
+    //   price: 10,
+    //   stock: 20,
+    //   image: 'assets/img/apple.jpg',
+    //   clearance: false,
+    //   quantity: 0,
+    // }];
     //tiene un singleton, si no tiene lo crea y si lo tiene devuelve el mismo
   constructor(private cart: ProductCartService,
     private productDataService: ProductDataService) { // al poner private ya me lo declara directamente afuera
