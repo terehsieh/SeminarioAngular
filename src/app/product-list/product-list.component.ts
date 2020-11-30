@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductCartService } from '../product-cart.service';
 import { Product } from './Product';
 
 @Component({
@@ -28,9 +29,18 @@ export class ProductListComponent implements OnInit {
       clearance: false,
       quantity: 0,
     }]
-  constructor() { }
+    //tiene un singleton, si no tiene lo crea y si lo tiene devuelve el mismo
+  constructor(private cart: ProductCartService) { // al poner private ya me lo declara directamente afuera
+  
+  }
 
   ngOnInit(): void {
+  }
+
+  addToCart(product: Product):void{
+    this.cart.addToCart(product);
+    product.stock-=product.quantity;// actualizo el stock
+    product.quantity=0; // volver a setear el valor en 0
   }
 
   

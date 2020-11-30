@@ -7,6 +7,7 @@
             <th>Type</th>
             <th>Price</th>
             <th>Stock</th>
+            <th>Quantity</th>
             <th>Buy</th>
         </tr>
     </thead>
@@ -21,9 +22,11 @@
             <td>{{product.price | currency}}</td>
             <td><span class="badge badge-warning" *ngIf="product.stock==0">OUT OF STOCK</span></td>
             <td>
-                <!-- los input son corchetes [ ], input y outputs son [( )]
- -->
+                <!-- los input son corchetes [ ], input y outputs son [( )]-->
                 <app-input-integer [(quantity)]="product.quantity" [max]="product.stock" *ngIf="product.stock" (maxReached)="maxReached($event)"></app-input-integer>
+            </td>
+            <td>
+                <button class="btn btn-primary" (click)="addToCart(product)">Buy</button>
             </td>
         </tr>
     </tbody>
