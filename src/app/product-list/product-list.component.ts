@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductCartService } from '../product-cart.service';
+import { ProductDataService } from '../product-data.service';
 import { Product } from './Product';
 
 @Component({
@@ -30,11 +31,14 @@ export class ProductListComponent implements OnInit {
       quantity: 0,
     }]
     //tiene un singleton, si no tiene lo crea y si lo tiene devuelve el mismo
-  constructor(private cart: ProductCartService) { // al poner private ya me lo declara directamente afuera
+  constructor(private cart: ProductCartService,
+    private productDataService: ProductDataService) { // al poner private ya me lo declara directamente afuera
   
   }
-
+//ciclo de vida
   ngOnInit(): void {
+    this.productDataService.getAll()
+    .subscribe(products=>this.products=products);//se susbscribe y actualiza los datos
   }
 
   addToCart(product: Product):void{
